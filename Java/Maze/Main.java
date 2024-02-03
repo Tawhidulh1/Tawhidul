@@ -12,6 +12,8 @@ public class Main {
         String[][] a = new String[11][11];
         int px = 0;
         int py = 0;
+        int wx = 0;
+        int wy = 0;
         boolean apl = true;
         boolean game = true;
         boolean answered = false;
