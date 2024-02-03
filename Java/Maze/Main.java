@@ -1,3 +1,6 @@
+//Project 01
+//Not really a Maze, map generation is bad.
+
 import java.util.Scanner;
 
 
@@ -9,7 +12,16 @@ public class Main {
         String[][] a = new String[11][11];
         int px = 0;
         int py = 0;
+        int wx = 0;
+        int wy = 0;
         boolean apl = true;
+        boolean game = true;
+        boolean answered = false;
+        boolean spaceForward = false;
+        boolean spaceLeft = false;
+        boolean spaceRight = false;
+        boolean spaceBackward = false;
+
         // Generate Map
         for(int i = 0; i < a.length; i++) {
             System.out.println();
@@ -33,28 +45,24 @@ public class Main {
                 }
                 else if (apl && a[j][i] != "X" ) {
                     a[j][i] = "W";
+                    wx = j;
+                    wy = i;
                     apl = false;
                 }
             }
         }
 
-        System.out.println();
 
-        boolean game = true;
-        boolean answered = false;
-        boolean spaceForward = false;
-        boolean spaceLeft = false;
-        boolean spaceRight = false;
-        boolean spaceBackward = false;
+        System.out.println();
         
-        for (int i = 0; i < a.length; i++) {
-            System.out.println();
-            for (int j = 0; j < a.length; j++) {
-                System.out.print(a[j][i]+" ");
-            }
-        }
         while (game) {
             while (!answered) {
+                for (int i = 0; i < a.length; i++) {
+                    System.out.println();
+                    for (int j = 0; j < a.length; j++) {
+                        System.out.print(a[j][i]+" ");
+                    }
+                }
                 System.out.print("Move with W A S D type Q to quit > ");
 
                 // Check for Tiles
@@ -78,7 +86,7 @@ public class Main {
 
 
 
-                // Move
+                // Check inputs
 
                 String move = in.nextLine();
                 switch (move.toLowerCase()) {
@@ -95,12 +103,12 @@ public class Main {
                 answered = true;
 
             }
-            for (int i = 0; i < a.length; i++) {
-                System.out.println();
-                for (int j = 0; j < a.length; j++) {
-                    System.out.print(a[j][i]+" ");
-                }
-            }         
+            // for (int i = 0; i < a.length; i++) {
+            //     System.out.println();
+            //     for (int j = 0; j < a.length; j++) {
+            //         System.out.print(a[j][i]+" ");
+            //     }
+            // }         
             answered = false;
         }
     }
