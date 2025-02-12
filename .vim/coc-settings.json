@@ -1,0 +1,20 @@
+{
+  "java.jdt.ls.java.home": "/usr/lib/jvm/java-17-openjdk",
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-17",
+      "path": "/usr/lib/jvm/java-17-openjdk"
+    }
+  ],
+  "java.format.settings.url": "/home/tawhidul/.vim/google-style.xml",
+  "java.format.settings.profile": "GoogleStyle",
+  "java.completion.favoriteStaticMembers": [
+    "org.junit.Assert.*",
+    "org.mockito.Mockito.*",
+    "java.util.Objects.requireNonNull",
+    "java.util.Objects.requireNonNullElse"
+  ],
+  "java.sources.organizeImports.starThreshold": 5,
+  "java.sources.organizeImports.staticStarThreshold": 3
+}
+
