@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.HashSet;
 public class SubtractOperation {
 	public static void main(String[] args){
 		Scanner in = new Scanner(System.in);
@@ -9,15 +10,16 @@ public class SubtractOperation {
 			int[] a = new int[n];
 			for (int i = 0; i < n; i++){a[i]=in.nextInt();}
 			boolean works = false;
-			for (int i =0; i < a.length; i++){
-				for (int j = 0; j < a.length; j++){
-					if (Math.abs(a[i]-a[j]) == k){
-						works = true;
-					}	
+			HashSet<Integer> set = new HashSet<Integer>();
+			for (int i = 0; i < n; i++){
+				if (set.contains(a[i] - k) || set.contains(a[i] +k)){
+					works = true;
+					break;
 				}
+				set.add(a[i]);
 			}
 			if (works){
-				System.out.println("YES");	
+				System.out.println("YES");
 			}
 			else {
 				System.out.println("NO");
